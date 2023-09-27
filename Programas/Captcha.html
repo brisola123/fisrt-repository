@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captcha</title>
+    <style>
+        body {
+            background-color: darkgray;
+        }
+    </style>
+</head>
+
+<body>
+    <!--1. Gerar números 2 aleatórios, atribuindo à 2 variaveis -->
+    <!--2. Depois faria a soma dessas 2 variaveis, atribuindo à 1 variavel resposta -->
+    <!--3. Depois eu perguntaria para o usuário, qual é a soma dos números-->
+    <!--4. Eu usaria a comparação com o a==b?'Está certo':'Está errado' -->
+    <div id="pergunta_usuario"></div>
+
+    <input type="number" name="resposta" id="resposta">
+    <input type="button" value="Enviar" onclick="resultadousuario()">
+
+    <div id="resposta_final"></div>
+
+    <script>
+        let n1 = parseInt(Math.random() * 20)
+        let n2 = parseInt(Math.random() * 30)
+        let resultadocerto = n1 + n2
+        let pergunta = document.querySelector("div#pergunta_usuario")
+        pergunta.innerHTML = `Qual é o valor da soma de ${n1}+${n2} = ?`
+
+        function resultadousuario() {
+            let respostausuario = document.querySelector("input#resposta")
+            let respostafinal = document.querySelector("div#resposta_final")
+
+            if (resultadocerto == respostausuario.value) {
+                respostafinal.innerHTML = "Você está certo, parabéns!"
+
+            } else {
+                respostafinal.innerHTML = "Você está errado, tente novamente."
+
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

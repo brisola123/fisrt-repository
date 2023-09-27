@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hora e Data</title>
+
+    <style>
+      body {
+        background-color: steelblue;
+        font: normal 15pt Arial;
+        color: black;
+      }
+      h1 {
+        color: white;
+      }
+      input#hora {
+        width: 100px;
+        height: 30px;
+        font: normal 13pt Arial;
+      }
+      input#data {
+        width: 100px;
+        height: 30px;
+        font: normal 13pt Arial;
+      }
+      span#hora1 {
+        color: white;
+      }
+      span#data1 {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hora e Data:</h1>
+    <p1>Clique para ver a <strong>Hora</strong> ou <strong>Data</strong>:</p1>
+    <input type="button" value="Hora atual" id="hora" onclick="hora()" />
+    <input type="button" value="Data atual" id="data" onclick="data()" /><br />
+    <span> A hora e/ou data atual é: </span>
+    <span id="hora1"></span>
+    <span id="data1"></span>
+
+    <script>
+      function hora() {
+        let hora_atual = new Date().toLocaleTimeString();
+        let hora2 = document.querySelector("span#hora1");
+        hora2.innerHTML = `<strong>${hora_atual}<strong>`;
+      }
+      function data() {
+        let data_atual = new Date().toLocaleDateString();
+        let data2 = document.querySelector("span#data1");
+        data2.innerHTML = `- <strong>${data_atual}<strong>`;
+      }
+    </script>
+  </body>
+</html>

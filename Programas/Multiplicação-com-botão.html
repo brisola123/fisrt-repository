@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Captcha</title>
+    <style>
+      body {
+        background-color: darkgray;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="pergunta">Escreva 2 números abaixo:</div>
+    <input type="number" name="numero1" id="numero1" />
+    <input type="number" name="numero2" id="numero2" />
+    <input type="button" value="Envia" onclick="multiplicacao()" />
+    <div id="resposta">Sua resposta é…</div>
+
+    <script>
+      function multiplicacao() {
+        let n1 = document.querySelector("input#numero1");
+        let n2 = document.querySelector("input#numero2");
+        let resposta1 = document.querySelector("div#resposta");
+        let resultado = n1.value * n2.value;
+        resposta1.innerHTML = `O Resultado da multiplicação de ${n1.value} x ${n2.value} = ${resultado}`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão Mágico</title>
+    <style>
+        div#test{
+            background: green;
+            color: white;
+            font: normal 15pt Arial;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id = "test" onclick="clicar()" onmouseenter="entrou()" onmouseout="saiu()">
+        <p1>Bota o mouse
+    </div>
+<script>
+function clicar(){
+    let r = document.querySelector ('div#test')
+    r.innerText = 'Clicou!'
+    r.style.background = 'yellow'
+    r.style.color = 'black'
+}
+function entrou (){
+    let r2 = document.querySelector ('div#test')
+    r2.innerText = 'Entrou!'
+    r2.style.background = 'blue'
+    r2.style.color = 'white'
+}
+function saiu(){
+    let r3 = document.querySelector ('div#test')
+    r3.innerText = 'Saiu!'
+    r3.style.background = 'red'
+    r3.style.color = 'white'
+}
+
+        
+    
+</script>
+        
+    
+</body>
+</html>
